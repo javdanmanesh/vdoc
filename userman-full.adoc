@@ -690,6 +690,7 @@ You can use the error ID at the start to find help about it:
 . Use Ctrl-D after typing a topic and let Vim show all available topics.
    Or press Tab to complete:
 
++
         :help some<Tab>
 +
 More information on how to use the help:
@@ -700,237 +701,268 @@ More information on how to use the help:
    help to the user documentation, which describes certain commands more from
    a user perspective and less detailed.  E.g. after:
 
++
         :help pattern.txt
 +
 You can see the user guide topics |03.9| and |usr_27.txt| in the introduction.
 
 . Options are enclosed in single apostrophes.  To go to the help topic for the
    list option:
-
++
         :help 'list'
 +
 If you only know you are looking for a certain option, you can also do:
 +
         :help options.txt
 +
-    to open the help page which describes all option handling and then search
-   using regular expressions, e.g. textwidth.
-   Certain options have their own namespace, e.g.:
-
+to open the help page which describes all option handling and then search using
+regular expressions, e.g. textwidth. Certain options have their own namespace,
+e.g.:
++
         :help cpo-<letter>
 +
-   for the corresponding flag of the 'cpoptions' settings, substitute <letter>
-   by a specific flag, e.g.:
+for the corresponding flag of the 'cpoptions' settings, substitute <letter> by
+a specific flag, e.g.:
 +
         :help cpo-;
 +
    And for the guioption flags:
 +
         :help go-<letter>
-
+ 
 . Normal mode commands do not have a prefix. To go to the help page for the
    "gt" command:
-
++
         :help gt
 
 . Insert mode commands start with i_.  Help for deleting a word:
-
++
         :help i_CTRL-W
 
 . Visual mode commands start with v_.  Help for jumping to the other side of
    the Visual area:
-
++
         :help v_o
 
 . Command line editing and arguments start with c_.  Help for using the
    command argument %:
-
++
         :help c_%
 
 . Ex-commands always start with ":", so to go to the ":s" command help:
-
++
         :help :s
 
 . Commands specifically for debugging start with ">".  To go to the help
    for the "cont" debug command:
-
++
         :help >cont
 
 . Key combinations.  They usually start with a single letter indicating
     the mode for which they can be used.  E.g.:
-
++
         :help i_CTRL-X
 +
-    takes you to the family of CTRL-X commands for insert mode which can be
-    used to auto-complete different things.  Note, that certain keys will
-    always be written the same, e.g. Control will always be CTRL.
-
-    For normal mode commands there is no prefix and the topic is available at
-    :h CTRL-<Letter>. E.g.  >
-
+takes you to the family of CTRL-X commands for insert mode which can be used to
+auto-complete different things.  Note, that certain keys will always be written
+the same, e.g. Control will always be CTRL.
++
+For normal mode commands there is no prefix and the topic is available at :h
+CTRL-<Letter>. E.g.
++
         :help CTRL-W
-
-    In contrast >
-
++
+In contrast
++
         :help c_CTRL-R
-
-    will describe what the CTRL-R does when entering commands in the Command
-    line and >
-
++
+will describe what the CTRL-R does when entering commands in the Command line
+and
++
         :help v_CTRL-A
-
-    talks about incrementing numbers in visual mode and >
-
++
+talks about incrementing numbers in visual mode and
++
         :help g_CTRL-A
-
-    talks about the "g<C-A>" command (e.g. you have to press "g" then
-    <CTRL-A>).  Here the "g" stands for the normal command "g" which always
-    expects a second key before doing something similar to the commands
-    starting with "z".
++
+talks about the "g<C-A>" command (e.g. you have to press "g" then <CTRL-A>).
+Here the "g" stands for the normal command "g" which always expects a second
+key before doing something similar to the commands starting with "z".
 
 . Regexp items always start with /.  So to get help for the "\+" quantifier
     in Vim regexes:
-
++
         :help /\+
-
-    If you need to know everything about regular expressions, start reading
-    at:
-
++
+If you need to know everything about regular expressions, start reading at:
++
         :help pattern.txt
 
 . Registers always start with "quote". To find out about the special ":"
-    register:
-
+register:
++
         :help quote:
 
-. Vim script is available at >
-
+. Vim script is available at
++
         :help eval.txt
-
-    Certain aspects of the language are available at :h expr-X where "X" is a
-    single letter. E.g.  >
-
++
+Certain aspects of the language are available at :h expr-X where "X" is a
+single letter. E.g.
++
         :help expr-!
-
-    will take you to the topic describing the "!" (Not) operator for Vim
-    script.
-
-    Also important is >
-
++
+will take you to the topic describing the "!" (Not) operator for Vim script.
++
+Also important is
++
         :help function-list
-
-    to find a short description of all functions available.  Help topics for
-    Vim script functions always include the "()", so:
-
++
+to find a short description of all functions available.  Help topics for Vim
+script functions always include the "()", so:
++
         :help append()
-
-    talks about the append Vim script function rather than how to append text
-    in the current buffer.
++
+talks about the append Vim script function rather than how to append text in
+the current buffer.
 
 . Mappings are talked about in the help page :h |map.txt|. Use >
-
++
         :help mapmode-i
-
-    to find out about the |:imap| command.  Also use :map-topic
-    to find out about certain subtopics particular for mappings.  e.g:
++
+to find out about the |:imap| command.  Also use :map-topic to find out about
+certain subtopics particular for mappings.  e.g:
++
         :help :map-local
-    for buffer-local mappings or >
++
+for buffer-local mappings or
++
         :help map-bar
-    for how the '|' is handled in mappings.
++
+for how the '|' is handled in mappings.
 
-. Command definitions are talked about :h command-topic, so use >
+. Command definitions are talked about :h command-topic, so use
++
         :help command-bar
-    to find out about the '!' argument for custom commands.
++
+to find out about the '!' argument for custom commands.
 
 . Window management commands always start with CTRL-W, so you find the
-    corresponding help at :h CTRL-W_letter.  E.g. >
+corresponding help at :h CTRL-W_letter.  E.g.
++
         :help CTRL-W_p
-    for moving the previous accessed window.  You can also access >
++
+for moving the previous accessed window.  You can also access
++
         :help windows.txt
-    and read your way through if you are looking for window handling
-    commands.
++
+and read your way through if you are looking for window handling commands.
 
 . Use |:helpgrep| to search in all help pages (and also of any installed
-    plugins).  See |:helpgrep| for how to use it.
-    To search for a topic:
+plugins).  See |:helpgrep| for how to use it.
++
+To search for a topic:
++
         :helpgrep topic
-    This takes you to the first match.  To go to the next one:
++
+This takes you to the first match.  To go to the next one:
++
         :cnext
-    All matches are available in the quickfix window which can be opened
-    with:
++
+All matches are available in the quickfix window which can be opened with:
++
         :copen
-    Move around to the match you like and press Enter to jump to that help.
++
+Move around to the match you like and press Enter to jump to that help.
 
 . The user manual.  This describes help topics for beginners in a rather
-    friendly way.  Start at |usr_toc.txt| to find the table of content (as you
-    might have guessed):
+friendly way.  Start at |usr_toc.txt| to find the table of content (as you
+might have guessed):
++
         :help usr_toc.txt
-    Skim over the contents to find interesting topics. The "Digraphs" and
-    "Entering special characters" items are in chapter 24, so to go to that
-    particular help page:
++
+Skim over the contents to find interesting topics. The "Digraphs" and "Entering
+special characters" items are in chapter 24, so to go to that particular help
+page:
++
         :help usr_24.txt
-    Also if you want to access a certain chapter in the help, the chapter
-    number can be accessed directly like this:
++
+Also if you want to access a certain chapter in the help, the chapter number
+can be accessed directly like this:
++
         :help 10.1
-    which goes to chapter 10.1 in |usr_10.txt| and talks about recording
-    macros.
++
+which goes to chapter 10.1 in |usr_10.txt| and talks about recording macros.
 
-. Highlighting groups.  Always start with hl-groupname.  E.g. >
+. Highlighting groups.  Always start with hl-groupname.  E.g.
++
         :help hl-WarningMsg
-    talks about the WarningMsg highlighting group.
++
+talks about the WarningMsg highlighting group.
 
-. Syntax highlighting is namespaced to :syn-topic.  E.g. >
+. Syntax highlighting is namespaced to :syn-topic.  E.g.
++
         :help :syn-conceal
-    talks about the conceal argument for the ":syn" command.
++
+talks about the conceal argument for the ":syn" command.
 
-. Quickfix commands usually start with :c while location list commands
-    usually start with :l
+. Quickfix commands usually start with :c while location list commands usually
+start with :l
 
 . Autocommand events can be found by their name:
++
         :help BufWinLeave
++
     To see all possible events:
++
         :help autocommand-events
++
 
 . Command-line switches always start with "-".  So for the help of the -f
     command switch of Vim use:
++
         :help -f
++
 
 . Optional features always start with "+".  To find out about the
     conceal feature use:
++
         :help +conceal
++
 
 . Documentation for included filetype specific functionality is usually
-    available in the form ft-<filetype>-<functionality>.  So >
+    available in the form ft-<filetype>-<functionality>.  So
++
         :help ft-c-syntax
-    talks about the C syntax file and the option it provides.  Sometimes,
-    additional sections for omni completion >
++
+talks about the C syntax file and the option it provides.  Sometimes,
+    additional sections for omni completion
++
         :help ft-php-omni
-    or filetype plugins >
++
+or filetype plugins
++
         :help ft-tex-plugin
-    are available.
++
+are available.
 
-. Error and Warning codes can be looked up directly in the help.  So >
+. Error and Warning codes can be looked up directly in the help.  So
 
++
         :help E297
-
-    takes you exactly to the description of the swap error message and >
-
++
+takes you exactly to the description of the swap error message and
++
         :help W10
-
-    talks about the warning "Changing a readonly file".
-
-    Sometimes, however, those error codes are not described, but rather are
++
+talks about the warning "Changing a readonly file".
++
+Sometimes, however, those error codes are not described, but rather are
     listed at the Vim command that usually causes this.  So:
-
++
         :help E128
-
-    takes you to the |:function| command
-
-
-
-Next chapter: |usr_03.txt|  Moving around
-
-
++
+takes you to the |:function| command
 
 == Moving around
 
@@ -964,7 +996,8 @@ example, "3w" moves three words.  This figure shows how it works:
 
 Notice that "w" moves to the start of the next word if it already is at the
 start of a word.
-   The "b" command moves backward to the start of the previous word:
+
+The "b" command moves backward to the start of the previous word:
 
         This is a line with example text
         <----<--<-<---------<---
@@ -986,7 +1019,9 @@ A word ends at a non-word character, such as a ".", "-" or ")".  To change
 what Vim considers to be a word, see the 'iskeyword' option.  If you try this
 out in the help directly, 'iskeyword' needs to be reset for the examples to
 work:
+
         :set iskeyword&
+
 It is also possible to move by white-space separated WORDs.  This is not a
 word in the normal sense, that's why the uppercase is used.  The commands for
 moving by WORDs are also uppercase, as this figure shows:
@@ -1017,12 +1052,13 @@ key does the same thing.  In a picture:
 
 (the "....." indicates blanks here)
 
-   The "$" command takes a count, like most movement commands.  But moving to
+The "$" command takes a count, like most movement commands.  But moving to
 the end of the line several times doesn't make sense.  Therefore it causes the
 editor to move to the end of another line.  For example, "1$" moves you to
 the end of the first line (the one you're on), "2$" to the end of the next
 line, and so on.
-   The "0" command doesn't take a count argument, because the "0" would be
+
+The "0" command doesn't take a count argument, because the "0" would be
 part of the count.  Unexpectedly, using a count with "^" doesn't have any
 effect.
 
@@ -1031,7 +1067,8 @@ effect.
 One of the most useful movement commands is the single-character search
 command.  The command "fx" searches forward in the line for the single
 character x.  Hint: "f" stands for "Find".
-   For example, you are at the beginning of the following line.  Suppose you
+
+For example, you are at the beginning of the following line.  Suppose you
 want to go to the h of human.  Just execute the command "fh" and the cursor
 will be positioned over the h:
 
@@ -1040,7 +1077,8 @@ will be positioned over the h:
             fh           fy
 
 This also shows that the command "fy" moves to the end of the word really.
-   You can specify a count; therefore, you can go to the "l" of "foul" with
+
+You can specify a count; therefore, you can go to the "l" of "foul" with
 "3fl":
 
         To err is human.  To really foul up you need a computer.
@@ -1109,7 +1147,8 @@ better way of doing things is to use the "G" command.  With a count, this
 command positions you at the given line number.  For example, "33G" puts you
 on line 33.  (For a better way of going through a compiler's error list, see
 |usr_30.txt|, for information on the :make command.)
-   With no argument, "G" positions you at the end of the file.  A quick way to
+
+With no argument, "G" positions you at the end of the file.  A quick way to
 go to the start of a file use "gg".  "1G" will do the same, but is a tiny bit
 more typing.
 
@@ -1150,40 +1189,42 @@ Hints: "H" stands for Home, "M" for Middle and "L" for Last.  Alternatively,
 
 To see where you are in a file, there are three ways:
 
-1.  Use the CTRL-G command.  You get a message like this (assuming the 'ruler'
+.  Use the CTRL-G command.  You get a message like this (assuming the 'ruler'
     option is off):
-
++
         "usr_03.txt" line 233 of 650 --35%-- col 45-52
++
+This shows the name of the file you are editing, the line number where the
+cursor is, the total number of lines, the percentage of the way through
+the file and the column of the cursor.
++
+Sometimes you will see a split column number.  For example, "col 2-9". This
+indicates that the cursor is positioned on the second character, but because
+character one is a tab, occupying eight spaces worth of columns, the screen
+column is 9.
 
-    This shows the name of the file you are editing, the line number where the
-    cursor is, the total number of lines, the percentage of the way through
-    the file and the column of the cursor.
-       Sometimes you will see a split column number.  For example, "col 2-9".
-    This indicates that the cursor is positioned on the second character, but
-    because character one is a tab, occupying eight spaces worth of columns,
-    the screen column is 9.
-
-2.  Set the 'number' option.  This will display a line number in front of
+.  Set the 'number' option.  This will display a line number in front of
     every line:
-
++
         :set number
-
-    To switch this off again:
-
++
+To switch this off again:
++
         :set nonumber
++
+Since 'number' is a boolean option, prepending "no" to its name has the effect
+of switching it off.  A boolean option has only these two values, it is either
+on or off.
++
+Vim has many options.  Besides the boolean ones there are options with a
+numerical value and string options.  You will see examples of this where they
+are used.
 
-    Since 'number' is a boolean option, prepending "no" to its name has the
-    effect of switching it off.  A boolean option has only these two values,
-    it is either on or off.
-       Vim has many options.  Besides the boolean ones there are options with
-    a numerical value and string options.  You will see examples of this where
-    they are used.
-
-3.  Set the 'ruler' option.  This will display the cursor position in the
+.  Set the 'ruler' option.  This will display the cursor position in the
     lower right corner of the Vim window:
-
++
         :set ruler
-
++
 Using the 'ruler' option has the advantage that it doesn't take much room,
 thus there is more space for your text.
 
@@ -1194,7 +1235,8 @@ through a viewing window at the text and moving this window up by half the
 height of the window.  Thus the window moves up over the text, which is
 backward in the file.  Don't worry if you have a little trouble remembering
 which end is up.  Most users have the same problem.
-   The CTRL-D command moves the viewing window down half a screen in the file,
+
+The CTRL-D command moves the viewing window down half a screen in the file,
 thus scrolls the text up half a screen.
 
                                        +----------------+
@@ -1252,11 +1294,11 @@ You will notice that when you type the "/" the cursor jumps to the last line
 of the Vim window, like with colon commands.  That is where you type the word.
 You can press the backspace key (backarrow or <BS>) to make corrections.  Use
 the <Left> and <Right> cursor keys when necessary.
-   Pressing <Enter> executes the command.
 
-        Note:
-        The characters .*[]^%/\?~$ have special meanings.  If you want to use
-        them in a search you must put a \ in front of them.  See below.
+Pressing <Enter> executes the command.
+
+NOTE: The characters .*[]^%/\?~$ have special meanings.  If you want to use
+them in a search you must put a \ in front of them.  See below.
 
 To find the next occurrence of the same string use the "n" command.  Use this
 to find the first #include after the cursor:
@@ -1303,7 +1345,8 @@ you press <Up> (the cursor key), Vim puts "/three" on the command line.
 Pressing <Enter> at this point searches for three.  If you do not press
 <Enter>, but press <Up> instead, Vim changes the prompt to "/two".  Another
 press of <Up> moves you to "/one".
-   You can also use the <Down> cursor key to move through the history of
+
+You can also use the <Down> cursor key to move through the history of
 search commands in the other direction.
 
 If you know what a previously used pattern starts with, and you want to use it
@@ -1319,10 +1362,12 @@ a previous command and execute it again.  These two histories are separate.
 Suppose you see the word "TheLongFunctionName" in the text and you want to
 find the next occurrence of it.  You could type "/TheLongFunctionName", but
 that's a lot of typing.  And when you make a mistake Vim won't find it.
-   There is an easier way: Position the cursor on the word and use the "*"
+
+There is an easier way: Position the cursor on the word and use the "*"
 command.  Vim will grab the word under the cursor and use it as the search
 string.
-   The "#" command does the same in the other direction.  You can prepend a
+
+The "#" command does the same in the other direction.  You can prepend a
 count: "3*" searches for the third occurrence of the word under the cursor.
 
 
@@ -1349,13 +1394,15 @@ can use "g*" and "g#" to match partial words).
 While editing a program you see a variable called "nr".  You want to check
 where it's used.  You could move the cursor to "nr" and use the "*" command
 and press "n" to go along all the matches.
-   There is another way.  Type this command:
+
+There is another way.  Type this command:
 
         :set hlsearch
 
 If you now search for "nr", Vim will highlight all matches.  That is a very
 good way to see where the variable is used, without the need to type commands.
-   To switch this off:
+
+To switch this off:
 
         :set nohlsearch
 
@@ -1391,7 +1438,8 @@ option is on by default, thus searching wraps around the end of the file.
 
 If you like one of the options mentioned before, and set it each time you use
 Vim, you can put the command in your Vim startup file.
-   Edit the file, as mentioned at |not-compatible|.  Or use this command to
+
+Edit the file, as mentioned at |not-compatible|.  Or use this command to
 find out where it is:
 
         :scriptnames
@@ -1419,7 +1467,8 @@ The Vim editor uses regular expressions to specify what to search for.
 Regular expressions are an extremely powerful and compact way to specify a
 search pattern.  Unfortunately, this power comes at a price, because regular
 expressions are a bit tricky to specify.
-   In this section we mention only a few essential ones.  More about search
+
+In this section we mention only a few essential ones.  More about search
 patterns and commands can be found in chapter 27 |usr_27.txt|.  You can find
 the full explanation here: |pattern|.
 
@@ -1430,7 +1479,8 @@ The ^ character matches the beginning of a line.  On an English-US keyboard
 you find it above the 6.  The pattern "include" matches the word include
 anywhere on the line.  But the pattern "^include" matches the word include
 only if it is at the beginning of a line.
-   The $ character matches the end of a line.  Therefore, "was$" matches the
+
+The $ character matches the end of a line.  Therefore, "was$" matches the
 word was only if it is at the end of a line.
 
 Let's mark the places where "/the" matches in this example line with "x"s:
@@ -1444,6 +1494,7 @@ Using "/the$" we find this match:
                                                        xxx
 
 And with "/^the" we find this one:
+
         the solder holding one of the chips melted and the
         xxx
 
@@ -1466,7 +1517,8 @@ character is anything, and whose third character is m.  Example:
 
 If you really want to match a dot, you must avoid its special meaning by
 putting a backslash before it.
-   If you search for "ter.", you will find these matches:
+
+If you search for "ter.", you will find these matches:
 
         We use a computer that became the cummin winter.
                       xxxx                          xxxx
@@ -1482,7 +1534,8 @@ where you came from, use this command:
         ``
 
 This ` is a backtick or open single-quote character.
-   If you use the same command a second time you will jump back again.  That's
+
+If you use the same command a second time you will jump back again.  That's
 because the "`" command is a jump itself, and the position from before this
 jump is remembered.
 
@@ -1490,7 +1543,8 @@ Generally, every time you do a command that can move the cursor further than
 within the same line, this is called a jump.  This includes the search
 commands "/" and "n" (it doesn't matter how far away the match is).  But not
 the character searches with "fx" and "tx" or the word movements "w" and "e".
-   Also, "j" and "k" are not considered to be a jump, even when you use a
+
+Also, "j" and "k" are not considered to be a jump, even when you use a
 count to make them move the cursor quite a long way away.
 
 The "``" command jumps back and forth, between two points.  The CTRL-O command
@@ -1517,19 +1571,19 @@ to the match for "The" with another CTRL-I.
              V  There you are  |             V
                 example text
 
-        Note:
-        CTRL-I is the same as <Tab>.
+NOTE: CTRL-I is the same as <Tab>.
 
 The ":jumps" command gives a list of positions you jumped to.  The entry which
 you used last is marked with a ">".
 
 
-NAMED MARKS                                                     *bookmark*
+==== NAMED MARKS
 
 Vim enables you to place your own marks in the text.  The command "ma" marks
 the place under the cursor as mark a.  You can place 26 marks (a through z) in
 your text.  You can't see them, it's just a position that Vim remembers.
-   To go to a mark, use the command `{mark}, where {mark} is the mark letter.
+
+To go to a mark, use the command `{mark}, where {mark} is the mark letter.
 Thus to move to the a mark:
 
         `a
@@ -1541,7 +1595,8 @@ command, which also moves you to the marked column.
 The marks can be very useful when working on two related parts in a file.
 Suppose you have some text near the start of the file you need to look at,
 while working on some text near the end of the file.
-   Move to the text at the start and place the s (start) mark there:
+
+Move to the text at the start and place the s (start) mark there:
 
         ms
 
@@ -1556,7 +1611,8 @@ you use this to jump there:
 
 Then you can use '' to jump back to where you were, or 'e to jump to the text
 you were working on at the end.
-   There is nothing special about using s for start and e for end, they are
+
+There is nothing special about using s for start and e for end, they are
 just easy to remember.
 
 You can use this command to get a list of marks:
@@ -1565,15 +1621,10 @@ You can use this command to get a list of marks:
 
 You will notice a few special marks.  These include:
 
-        '       The cursor position before doing a jump
-        "       The cursor position when last editing the file
-        [       Start of the last change
-        ]       End of the last change
-
-
-Next chapter: |usr_04.txt|  Making small changes
-
-
+'::     The cursor position before doing a jump
+"::     The cursor position when last editing the file
+[::     Start of the last change
+]::     End of the last change
 
 == Making small changes
 
