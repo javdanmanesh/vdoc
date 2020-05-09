@@ -818,12 +818,12 @@ conditions under which the commands are explained.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The User manual
+<p><strong>The User manual</strong>
 Task oriented explanations, from simple to complex.  Reads from start to
 end like a book.</p>
 </li>
 <li>
-<p>The Reference manual
+<p><strong>The Reference manual</strong>
 Precise description of how everything in Vim works.</p>
 </li>
 </ol>
@@ -838,11 +838,15 @@ Precise description of how everything in Vim works.</p>
 jump between the description of an editing task and a precise explanation of
 the commands and options used for it.  Use these two commands:</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Press  CTRL-]  to jump to a subject under the cursor.
-Press  CTRL-O  to jump back (repeat to go further back).</pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Press  CTRL-]  to jump to a subject under the cursor.</p>
+</li>
+<li>
+<p>Press  CTRL-O  to jump back (repeat to go further back).</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Many links are in vertical bars, like this: |bars|.  The bars themselves may
@@ -856,10 +860,14 @@ Try it out: Move the cursor to  CTRL-]  and press CTRL-] on it.</p>
 <div class="paragraph">
 <p>The bars and stars are usually hidden with the |conceal| feature.  They also
 use |hl-Ignore|, using the same color for the text as the background.  You can
-make them visible with:
-        :set conceallevel=0
-        :hi link HelpBar Normal
-        :hi link HelpStar Normal</p>
+make them visible with:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:set conceallevel=0
+:hi link HelpBar Normal
+:hi link HelpStar Normal</pre>
+</div>
 </div>
 </div>
 </div>
@@ -879,13 +887,33 @@ setup is to copy the example vimrc file.  By doing this inside Vim you don&#8217
 have to check out where it is located.  How to do this depends on the system
 you are using:</p>
 </div>
-<div class="paragraph">
-<p>Unix:
-        :!cp -i $VIMRUNTIME/vimrc_example.vim ~/.vimrc
-MS-Windows:
-        :!copy $VIMRUNTIME/vimrc_example.vim $VIM/_vimrc
-Amiga:
-        :!copy $VIMRUNTIME/vimrc_example.vim $VIM/.vimrc</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Unix:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:!cp -i $VIMRUNTIME/vimrc_example.vim ~/.vimrc</pre>
+</div>
+</div>
+</li>
+<li>
+<p>MS-Windows:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:!copy $VIMRUNTIME/vimrc_example.vim $VIM/_vimrc</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Amiga:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:!copy $VIMRUNTIME/vimrc_example.vim $VIM/.vimrc</pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>If the file already exists you probably want to keep it.</p>
@@ -918,16 +946,22 @@ back on.</p>
 <div class="paragraph">
 <p>For more info see |vimrc| and |compatible-default|.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Note:
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 This manual is about using Vim in the normal way.  There is an
 alternative called "evim" (easy Vim).  This is still Vim, but used in
 a way that resembles a click-and-type editor like Notepad.  It always
 stays in Insert mode, thus it feels very different.  It is not
 explained in the user manual, since it should be mostly
-self-explanatory.  See |evim-keys| for details.</pre>
-</div>
+self-explanatory.  See |evim-keys| for details.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -951,8 +985,10 @@ vimtutor.bat in the $VIMRUNTIME directory.</p>
 </div>
 <div class="paragraph">
 <p>This will make a copy of the tutor file, so that you can edit it without
-the risk of damaging the original.
-   There are a few translated versions of the tutor.  To find out if yours is
+the risk of damaging the original.</p>
+</div>
+<div class="paragraph">
+<p>There are a few translated versions of the tutor.  To find out if yours is
 available, use the two-letter language code.  For French:</p>
 </div>
 <div class="literalblock">
@@ -988,12 +1024,10 @@ VMS prompt with:</p>
 <pre>vim --clean -c 'e $VIMRUNTIME/tutor/tutor' -c 'w! TUTORCOPY' -c 'q'</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>   This will write the file "TUTORCOPY" in the current directory.  To use a
+<div class="paragraph">
+<p>This will write the file "TUTORCOPY" in the current directory.  To use a
 translated version of the tutor, append the two-letter language code to the
-filename.  For French:</pre>
-</div>
+filename.  For French:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1008,10 +1042,8 @@ filename.  For French:</pre>
 <pre>vim --clean TUTORCOPY</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>The --clean argument makes sure Vim is started with nice defaults.</pre>
-</div>
+<div class="paragraph">
+<p>The --clean argument makes sure Vim is started with nice defaults.</p>
 </div>
 </li>
 <li>
@@ -1055,9 +1087,6 @@ style.</p>
 <div class="paragraph">
 <p>If you make money through selling the manuals, you are strongly encouraged to
 donate part of the profit to help AIDS victims in Uganda.  See |iccf|.</p>
-</div>
-<div class="paragraph">
-<p>Next chapter: |usr_02.txt|  The first steps in Vim</p>
 </div>
 </div>
 </div>
@@ -1110,8 +1139,10 @@ commands, they form the base for what follows.</p>
 </div>
 <div class="paragraph">
 <p>In UNIX you can type this at any command prompt.  If you are running Microsoft
-Windows, open a Command Prompt and enter the command.
-   In either case, Vim starts editing a file called file.txt.  Because this
+Windows, open a Command Prompt and enter the command.</p>
+</div>
+<div class="paragraph">
+<p>In either case, Vim starts editing a file called file.txt.  Because this
 is a new file, you get a blank window. This is what your screen will look
 like:</p>
 </div>
@@ -1129,7 +1160,7 @@ like:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The tilde (~) lines indicate lines not in the file.  In other words, when Vim
+<p>The tilde (\~) lines indicate lines not in the file.  In other words, when Vim
 runs out of file to display, it displays tilde lines.  At the bottom of the
 screen, a message line indicates the file is named file.txt and shows that you
 are creating a new file.  The message information is temporary and other
@@ -1161,8 +1192,10 @@ have extra features, like a menu bar.  More about that later.</p>
 <p>The Vim editor is a modal editor.  That means that the editor behaves
 differently, depending on which mode you are in.  The two basic modes are
 called Normal mode and Insert mode.  In Normal mode the characters you type
-are commands.  In Insert mode the characters are inserted as text.
-   Since you have just started Vim it will be in Normal mode.  To start Insert
+are commands.  In Insert mode the characters are inserted as text.</p>
+</div>
+<div class="paragraph">
+<p>Since you have just started Vim it will be in Normal mode.  To start Insert
 mode you type the "i" command (i for Insert).  Then you can enter
 the text.  It will be inserted into the file.  Do not worry if you make
 mistakes; you can correct them later.  To enter the following programmer&#8217;s
@@ -1190,9 +1223,8 @@ now have two lines of text in your Vim window:</p>
 +---------------------------------------+</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>WHAT IS THE MODE?</p>
-</div>
+<div class="sect3">
+<h4 id="_what_is_the_mode">WHAT IS THE MODE?</h4>
 <div class="paragraph">
 <p>To be able to see what mode you are in, type this command:</p>
 </div>
@@ -1205,8 +1237,10 @@ now have two lines of text in your Vim window:</p>
 <p>You will notice that when typing the colon Vim moves the cursor to the last
 line of the window.  That&#8217;s where you type colon commands (commands that start
 with a colon).  Finish this command by pressing the &lt;Enter&gt; key (all commands
-that start with a colon are finished this way).
-   Now, if you type the "i" command Vim will display --INSERT-- at the bottom
+that start with a colon are finished this way).</p>
+</div>
+<div class="paragraph">
+<p>Now, if you type the "i" command Vim will display --INSERT-- at the bottom
 of the window.  This indicates you are in Insert mode.</p>
 </div>
 <div class="literalblock">
@@ -1222,6 +1256,7 @@ of the window.  This indicates you are in Insert mode.</p>
 </div>
 <div class="paragraph">
 <p>If you press &lt;Esc&gt; to go back to Normal mode the last line will be made blank.</p>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_getting_out_of_trouble">GETTING OUT OF TROUBLE</h4>
@@ -1255,18 +1290,23 @@ an editor, and these keys are on the home row of your right hand.  In other
 words, these commands are placed where you can type them the fastest
 (especially when you type with ten fingers).</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Note:
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 You can also move the cursor by using the arrow keys.  If you do,
-however, you greatly slow down your editing because to press the arrow
-keys, you must move your hand from the text keys to the arrow keys.
-Considering that you might be doing it hundreds of times an hour, this
-can take a significant amount of time.
-   Also, there are keyboards which do not have arrow keys, or which
-locate them in unusual places; therefore, knowing the use of the hjkl
-keys helps in those situations.</pre>
-</div>
+however, you greatly slow down your editing because to press the arrow keys,
+you must move your hand from the text keys to the arrow keys. Considering that
+you might be doing it hundreds of times an hour, this can take a significant
+amount of time. Also, there are keyboards which do not have arrow keys, or
+which locate them in unusual places; therefore, knowing the use of the hjkl
+keys helps in those situations.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>One way to remember these commands is that h is on the left, l is on the
@@ -1296,7 +1336,7 @@ mode.  The |vimtutor| is also a nice way to learn by doing.</p>
    Huan Ho      &lt;--- ---&gt;  Los Angeles
 (Yellow river)      |
                     v
-                  Java (the island, not the programming language)</pre>
+                  Java</pre>
 </div>
 </div>
 </div>
@@ -1365,8 +1405,10 @@ then move up to fill the gap:</p>
 <h4 id="_deleting_a_line_break">DELETING A LINE BREAK</h4>
 <div class="paragraph">
 <p>In Vim you can join two lines together, which means that the line break
-between them is deleted.  The "J" command does this.
-   Take these two lines:</p>
+between them is deleted.  The "J" command does this.</p>
+</div>
+<div class="paragraph">
+<p>Take these two lines:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1389,8 +1431,10 @@ turtle</pre>
 <div class="paragraph">
 <p>Suppose you delete too much.  Well, you can type it in again, but an easier
 way exists.  The "u" command undoes the last edit.  Take a look at this in
-action: After using "dd" to delete the first line, "u" brings it back.
-   Another one: Move the cursor to the A in the first line:</p>
+action: After using "dd" to delete the first line, "u" brings it back.</p>
+</div>
+<div class="paragraph">
+<p>Another one: Move the cursor to the A in the first line:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1434,16 +1478,21 @@ young intelligent turtle
 A young intelligent turtle</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Note:
-If you type "u" twice, and the result is that you get the same text
-back, you have Vim configured to work Vi compatible.  Look here to fix
-this: |not-compatible|.
-   This text assumes you work "The Vim Way".  You might prefer to use
-the good old Vi way, but you will have to watch out for small
-differences in the text then.</pre>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you type "u" twice, and the result is that you get the same text back,
+you have Vim configured to work Vi compatible.  Look here to fix this:
+|not-compatible|. This text assumes you work "The Vim Way". You might prefer to
+use the good old Vi way, but you will have to watch out for small differences
+in the text then.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_redo">REDO</h4>
@@ -1502,20 +1551,28 @@ Here are a few often used ones.</p>
 <p>The "i" command inserts a character before the character under the cursor.
 That works fine; but what happens if you want to add stuff to the end of the
 line?  For that you need to insert text after the cursor.  This is done with
-the "a" (append) command.
-   For example, to change the line</p>
+the "a" (append) command.</p>
+</div>
+<div class="paragraph">
+<p>For example, to change the line</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>        and that's not saying much for the turtle.
-to
-        and that's not saying much for the turtle!!!</pre>
+<pre>and that's not saying much for the turtle.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>and that's not saying much for the turtle!!!</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>move the cursor over to the dot at the end of the line. Then type "x" to
 delete the period.  The cursor is now positioned at the end of the line on the
-e in turtle.  Now type &gt;</p>
+e in turtle.  Now type</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1535,8 +1592,10 @@ e in turtle.  Now type &gt;</p>
 <h4 id="_opening_up_a_new_line">OPENING UP A NEW LINE</h4>
 <div class="paragraph">
 <p>The "o" command creates a new, empty line below the cursor and puts Vim in
-Insert mode.  Then you can type the text for the new line.
-   Suppose the cursor is somewhere in the first of these two lines:</p>
+Insert mode.  Then you can type the text for the new line.</p>
+</div>
+<div class="paragraph">
+<p>Suppose the cursor is somewhere in the first of these two lines:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1584,14 +1643,19 @@ count always comes before the command it applies to.</p>
 <div class="paragraph">
 <p>To exit, use the "ZZ" command.  This command writes the file and exits.</p>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>Note:
-Unlike many other editors, Vim does not automatically make a backup
-file.  If you type "ZZ", your changes are committed and there's no
-turning back.  You can configure the Vim editor to produce backup
-files; see |07.4|.</pre>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Unlike many other editors, Vim does not automatically make a backup file.
+If you type "ZZ", your changes are committed and there&#8217;s no turning back.  You
+can configure the Vim editor to produce backup files; see |07.4|.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_discarding_changes">DISCARDING CHANGES</h4>
@@ -1611,8 +1675,10 @@ quit-and-throw-things-away command.  It is:</p>
 <div class="paragraph">
 <p>For those of you interested in the details, the three parts of this command
 are the colon (:), which enters Command-line mode; the q command, which tells
-the editor to quit; and the override command modifier (!).
-   The override command modifier is needed because Vim is reluctant to throw
+the editor to quit; and the override command modifier (!).</p>
+</div>
+<div class="paragraph">
+<p>The override command modifier is needed because Vim is reluctant to throw
 away changes.  If you were to just type ":q", Vim would display an error
 message and refuse to exit:</p>
 </div>
@@ -1656,13 +1722,17 @@ You won&#8217;t see help for commands added later.  These would not work for you
 </div>
 <div class="paragraph">
 <p>You could also use the first function key &lt;F1&gt;.  If your keyboard has a &lt;Help&gt;
-key it might work as well.
-   If you don&#8217;t supply a subject, ":help" displays the general help window.
+key it might work as well.</p>
+</div>
+<div class="paragraph">
+<p>If you don&#8217;t supply a subject, ":help" displays the general help window.
 The creators of Vim did something very clever (or very lazy) with the help
 system: They made the help window a normal editing window.  You can use all
 the normal Vim commands to move through the help information.  Therefore h, j,
-k, and l move left, down, up and right.
-   To get out of the help window, use the same command you use to get out of
+k, and l move left, down, up and right.</p>
+</div>
+<div class="paragraph">
+<p>To get out of the help window, use the same command you use to get out of
 the editor: "ZZ".  This will only close the help window, not exit Vim.</p>
 </div>
 <div class="paragraph">
@@ -1671,14 +1741,20 @@ the editor: "ZZ".  This will only close the help window, not exit Vim.</p>
 cursor anywhere between the bars and press CTRL-] (jump to tag), the help
 system takes you to the indicated subject.  (For reasons not discussed here,
 the Vim terminology for a hyperlink is tag.  So CTRL-] jumps to the location
-of the tag given by the word under the cursor.)
-   After a few jumps, you might want to go back.  CTRL-T (pop tag) takes you
+of the tag given by the word under the cursor.)</p>
+</div>
+<div class="paragraph">
+<p>After a few jumps, you might want to go back.  CTRL-T (pop tag) takes you
 back to the preceding position.  CTRL-O (jump to older position) also works
-nicely here.
-   At the top of the help screen, there is the notation <strong>help.txt</strong>.  This name
+nicely here.</p>
+</div>
+<div class="paragraph">
+<p>At the top of the help screen, there is the notation <strong>help.txt</strong>.  This name
 between "*" characters is used by the help system to define a tag (hyperlink
-destination).
-   See |29.1| for details about using tags.</p>
+destination).</p>
+</div>
+<div class="paragraph">
+<p>See |29.1| for details about using tags.</p>
 </div>
 <div class="paragraph">
 <p>To get help on a given subject, use the following command:</p>
@@ -1714,7 +1790,7 @@ destination).
 </div>
 <div class="paragraph">
 <p>When you need to get help for a control character command (for example,
-CTRL-A), you need to spell it with the prefix "CTRL-". &gt;</p>
+CTRL-A), you need to spell it with the prefix "CTRL-".</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1790,224 +1866,433 @@ in Insert mode, for instance, use this command:</p>
 <pre>:help E37</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Summary:                                        <strong>help-summary</strong>  &gt;</p>
+<div class="sect3">
+<h4 id="_summary">Summary</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use Ctrl-D after typing a topic and let Vim show all available topics.
+Or press Tab to complete:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help some&lt;Tab&gt;</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>1) Use Ctrl-D after typing a topic and let Vim show all available topics.
-   Or press Tab to complete:
-        :help some&lt;Tab&gt;
-&lt;   More information on how to use the help:
-        :help helphelp</p>
+<p>More information on how to use the help:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help helphelp</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Follow the links in bars to related help.  You can go from the detailed
+help to the user documentation, which describes certain commands more from
+a user perspective and less detailed.  E.g. after:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help pattern.txt</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>2) Follow the links in bars to related help.  You can go from the detailed
-   help to the user documentation, which describes certain commands more from
-   a user perspective and less detailed.  E.g. after:
-        :help pattern.txt
-&lt;   You can see the user guide topics |03.9| and |usr_27.txt| in the
-   introduction.</p>
+<p>You can see the user guide topics |03.9| and |usr_27.txt| in the introduction.</p>
+</div>
+</li>
+<li>
+<p>Options are enclosed in single apostrophes.  To go to the help topic for the
+list option:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help 'list'</pre>
+</div>
 </div>
 <div class="paragraph">
-<p>3) Options are enclosed in single apostrophes.  To go to the help topic for the
-   list option:
-        :help 'list'
-&lt;   If you only know you are looking for a certain option, you can also do:
-        :help options.txt
-&lt;   to open the help page which describes all option handling and then search
-   using regular expressions, e.g. textwidth.
-   Certain options have their own namespace, e.g.:
-        :help cpo-&lt;letter&gt;
-&lt;   for the corresponding flag of the 'cpoptions' settings, substitute &lt;letter&gt;
-   by a specific flag, e.g.:
-        :help cpo-;
-&lt;   And for the guioption flags:
-        :help go-&lt;letter&gt;</p>
+<p>If you only know you are looking for a certain option, you can also do:</p>
 </div>
-<div class="paragraph">
-<p>4) Normal mode commands do not have a prefix. To go to the help page for the
-   "gt" command:
-        :help gt</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help options.txt</pre>
 </div>
-<div class="paragraph">
-<p>5) Insert mode commands start with i_.  Help for deleting a word:
-        :help i_CTRL-W</p>
 </div>
-<div class="paragraph">
-<p>6) Visual mode commands start with v_.  Help for jumping to the other side of
-   the Visual area:
-        :help v_o</p>
+<div class="literalblock">
+<div class="content">
+<pre> to open the help page which describes all option handling and then search
+using regular expressions, e.g. textwidth.
+Certain options have their own namespace, e.g.:</pre>
 </div>
-<div class="paragraph">
-<p>7) Command line editing and arguments start with c_.  Help for using the
-   command argument %:
-        :help c_%</p>
 </div>
-<div class="paragraph">
-<p>8) Ex-commands always start with ":", so to go to the ":s" command help:
-        :help :s</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help cpo-&lt;letter&gt;</pre>
 </div>
-<div class="paragraph">
-<p>9) Commands specifically for debugging start with "&gt;".  To go to the help
-   for the "cont" debug command:
-        :help &gt;cont</p>
 </div>
-<div class="paragraph">
-<p>10) Key combinations.  They usually start with a single letter indicating
-    the mode for which they can be used.  E.g.:
-        :help i_CTRL-X
-&lt;    takes you to the family of CTRL-X commands for insert mode which can be
-    used to auto-complete different things.  Note, that certain keys will
-    always be written the same, e.g. Control will always be CTRL.
-    For normal mode commands there is no prefix and the topic is available at
-    :h CTRL-&lt;Letter&gt;. E.g.  &gt;
-        :help CTRL-W
-&lt;    In contrast &gt;
-        :help c_CTRL-R
-&lt;    will describe what the CTRL-R does when entering commands in the Command
-    line and &gt;
-        :help v_CTRL-A
-&lt;    talks about incrementing numbers in visual mode and &gt;
-        :help g_CTRL-A
-&lt;    talks about the "g&lt;C-A&gt;" command (e.g. you have to press "g" then
-    &lt;CTRL-A&gt;).  Here the "g" stands for the normal command "g" which always
-    expects a second key before doing something similar to the commands
-    starting with "z".</p>
+<div class="literalblock">
+<div class="content">
+<pre>for the corresponding flag of the 'cpoptions' settings, substitute &lt;letter&gt;
+by a specific flag, e.g.:</pre>
 </div>
-<div class="paragraph">
-<p>11) Regexp items always start with /.  So to get help for the "+" quantifier
-    in Vim regexes:
-        :help /\+
-&lt;    If you need to know everything about regular expressions, start reading
-    at:
-        :help pattern.txt</p>
 </div>
-<div class="paragraph">
-<p>12) Registers always start with "quote". To find out about the special ":"
-    register:
-        :help quote:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help cpo-;</pre>
 </div>
-<div class="paragraph">
-<p>13) Vim script is available at &gt;
-        :help eval.txt
-&lt;    Certain aspects of the language are available at :h expr-X where "X" is a
-    single letter. E.g.  &gt;
-        :help expr-!
-&lt;    will take you to the topic describing the "!" (Not) operator for Vim
-    script.
-    Also important is &gt;
-        :help function-list
-&lt;    to find a short description of all functions available.  Help topics for
-    Vim script functions always include the "()", so:
-        :help append()
-&lt;    talks about the append Vim script function rather than how to append text
-    in the current buffer.</p>
 </div>
-<div class="paragraph">
-<p>14) Mappings are talked about in the help page :h |map.txt|. Use &gt;
-        :help mapmode-i
-&lt;    to find out about the |:imap| command.  Also use :map-topic
-    to find out about certain subtopics particular for mappings.  e.g:
-        :help :map-local
-&lt;    for buffer-local mappings or &gt;
-        :help map-bar
-&lt;    for how the '|' is handled in mappings.</p>
+<div class="literalblock">
+<div class="content">
+<pre>And for the guioption flags:</pre>
 </div>
-<div class="paragraph">
-<p>15) Command definitions are talked about :h command-topic, so use &gt;
-        :help command-bar
-&lt;    to find out about the '!' argument for custom commands.</p>
 </div>
-<div class="paragraph">
-<p>16) Window management commands always start with CTRL-W, so you find the
-    corresponding help at :h CTRL-W_letter.  E.g. &gt;
-        :help CTRL-W_p
-&lt;    for moving the previous accessed window.  You can also access &gt;
-        :help windows.txt
-&lt;    and read your way through if you are looking for window handling
-    commands.</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help go-&lt;letter&gt;</pre>
 </div>
-<div class="paragraph">
-<p>17) Use |:helpgrep| to search in all help pages (and also of any installed
-    plugins).  See |:helpgrep| for how to use it.
-    To search for a topic:
-        :helpgrep topic
-&lt;    This takes you to the first match.  To go to the next one:
-        :cnext
-&lt;    All matches are available in the quickfix window which can be opened
-    with:
-        :copen
-&lt;    Move around to the match you like and press Enter to jump to that help.</p>
 </div>
-<div class="paragraph">
-<p>18) The user manual.  This describes help topics for beginners in a rather
-    friendly way.  Start at |usr_toc.txt| to find the table of content (as you
-    might have guessed):
-        :help usr_toc.txt
-&lt;    Skim over the contents to find interesting topics. The "Digraphs" and
-    "Entering special characters" items are in chapter 24, so to go to that
-    particular help page:
-        :help usr_24.txt
-&lt;    Also if you want to access a certain chapter in the help, the chapter
-    number can be accessed directly like this:
-        :help 10.1
-&lt;    which goes to chapter 10.1 in |usr_10.txt| and talks about recording
-    macros.</p>
+</li>
+<li>
+<p>Normal mode commands do not have a prefix. To go to the help page for the
+"gt" command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help gt</pre>
 </div>
-<div class="paragraph">
-<p>19) Highlighting groups.  Always start with hl-groupname.  E.g. &gt;
-        :help hl-WarningMsg
-&lt;    talks about the WarningMsg highlighting group.</p>
 </div>
-<div class="paragraph">
-<p>20) Syntax highlighting is namespaced to :syn-topic.  E.g. &gt;
-        :help :syn-conceal
-&lt;    talks about the conceal argument for the ":syn" command.</p>
+</li>
+<li>
+<p>Insert mode commands start with i_.  Help for deleting a word:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help i_CTRL-W</pre>
 </div>
-<div class="paragraph">
-<p>21) Quickfix commands usually start with :c while location list commands
-    usually start with :l</p>
 </div>
-<div class="paragraph">
-<p>22) Autocommand events can be found by their name:
-        :help BufWinLeave
-&lt;    To see all possible events:
-        :help autocommand-events</p>
+</li>
+<li>
+<p>Visual mode commands start with v_.  Help for jumping to the other side of
+the Visual area:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help v_o</pre>
 </div>
-<div class="paragraph">
-<p>23) Command-line switches always start with "-".  So for the help of the -f
-    command switch of Vim use:
-        :help -f</p>
 </div>
-<div class="paragraph">
-<p>24) Optional features always start with "+".  To find out about the
-    conceal feature use:
-        :help +conceal</p>
+</li>
+<li>
+<p>Command line editing and arguments start with c_.  Help for using the
+command argument %:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help c_%</pre>
 </div>
-<div class="paragraph">
-<p>25) Documentation for included filetype specific functionality is usually
-    available in the form ft-&lt;filetype&gt;-&lt;functionality&gt;.  So &gt;
-        :help ft-c-syntax
-&lt;    talks about the C syntax file and the option it provides.  Sometimes,
-    additional sections for omni completion &gt;
-        :help ft-php-omni
-&lt;    or filetype plugins &gt;
-        :help ft-tex-plugin
-&lt;    are available.</p>
 </div>
-<div class="paragraph">
-<p>26) Error and Warning codes can be looked up directly in the help.  So &gt;
-        :help E297
-&lt;    takes you exactly to the description of the swap error message and &gt;
-        :help W10
-&lt;    talks about the warning "Changing a readonly file".
-    Sometimes, however, those error codes are not described, but rather are
-    listed at the Vim command that usually causes this.  So:
-        :help E128
-&lt;    takes you to the |:function| command</p>
+</li>
+<li>
+<p>Ex-commands always start with ":", so to go to the ":s" command help:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help :s</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Commands specifically for debugging start with "&gt;".  To go to the help
+for the "cont" debug command:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help &gt;cont</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Key combinations.  They usually start with a single letter indicating
+the mode for which they can be used.  E.g.:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help i_CTRL-X</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>takes you to the family of CTRL-X commands for insert mode which can be
+used to auto-complete different things.  Note, that certain keys will
+always be written the same, e.g. Control will always be CTRL.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>For normal mode commands there is no prefix and the topic is available at
+:h CTRL-&lt;Letter&gt;. E.g.  &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help CTRL-W</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>In contrast &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help c_CTRL-R</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>will describe what the CTRL-R does when entering commands in the Command
+line and &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help v_CTRL-A</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>talks about incrementing numbers in visual mode and &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help g_CTRL-A</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>talks about the "g&lt;C-A&gt;" command (e.g. you have to press "g" then
+&lt;CTRL-A&gt;).  Here the "g" stands for the normal command "g" which always
+expects a second key before doing something similar to the commands
+starting with "z".</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Regexp items always start with /.  So to get help for the "\+" quantifier
+in Vim regexes:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help /\+</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>If you need to know everything about regular expressions, start reading
+at:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help pattern.txt</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Registers always start with "quote". To find out about the special ":"
+register:</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help quote:</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Vim script is available at &gt;</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help eval.txt</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Certain aspects of the language are available at :h expr-X where "X" is a
+single letter. E.g.  &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help expr-!</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>will take you to the topic describing the "!" (Not) operator for Vim
+script.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Also important is &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help function-list</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>to find a short description of all functions available.  Help topics for
+Vim script functions always include the "()", so:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help append()</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>talks about the append Vim script function rather than how to append text
+in the current buffer.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Mappings are talked about in the help page :h |map.txt|. Use &gt;</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help mapmode-i</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>to find out about the |:imap| command.  Also use :map-topic
+to find out about certain subtopics particular for mappings.  e.g:
+    :help :map-local
+for buffer-local mappings or &gt;
+    :help map-bar
+for how the '|' is handled in mappings.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Command definitions are talked about :h command-topic, so use &gt;
+    :help command-bar
+to find out about the '!' argument for custom commands.</p>
+</li>
+<li>
+<p>Window management commands always start with CTRL-W, so you find the
+corresponding help at :h CTRL-W_letter.  E.g. &gt;
+    :help CTRL-W_p
+for moving the previous accessed window.  You can also access &gt;
+    :help windows.txt
+and read your way through if you are looking for window handling
+commands.</p>
+</li>
+<li>
+<p>Use |:helpgrep| to search in all help pages (and also of any installed
+plugins).  See |:helpgrep| for how to use it.
+To search for a topic:
+    :helpgrep topic
+This takes you to the first match.  To go to the next one:
+    :cnext
+All matches are available in the quickfix window which can be opened
+with:
+    :copen
+Move around to the match you like and press Enter to jump to that help.</p>
+</li>
+<li>
+<p>The user manual.  This describes help topics for beginners in a rather
+friendly way.  Start at |usr_toc.txt| to find the table of content (as you
+might have guessed):
+    :help usr_toc.txt
+Skim over the contents to find interesting topics. The "Digraphs" and
+"Entering special characters" items are in chapter 24, so to go to that
+particular help page:
+    :help usr_24.txt
+Also if you want to access a certain chapter in the help, the chapter
+number can be accessed directly like this:
+    :help 10.1
+which goes to chapter 10.1 in |usr_10.txt| and talks about recording
+macros.</p>
+</li>
+<li>
+<p>Highlighting groups.  Always start with hl-groupname.  E.g. &gt;
+    :help hl-WarningMsg
+talks about the WarningMsg highlighting group.</p>
+</li>
+<li>
+<p>Syntax highlighting is namespaced to :syn-topic.  E.g. &gt;
+    :help :syn-conceal
+talks about the conceal argument for the ":syn" command.</p>
+</li>
+<li>
+<p>Quickfix commands usually start with :c while location list commands
+usually start with :l</p>
+</li>
+<li>
+<p>Autocommand events can be found by their name:
+    :help BufWinLeave
+To see all possible events:
+    :help autocommand-events</p>
+</li>
+<li>
+<p>Command-line switches always start with "-".  So for the help of the -f
+command switch of Vim use:
+    :help -f</p>
+</li>
+<li>
+<p>Optional features always start with "+".  To find out about the
+conceal feature use:
+    :help +conceal</p>
+</li>
+<li>
+<p>Documentation for included filetype specific functionality is usually
+available in the form ft-&lt;filetype&gt;-&lt;functionality&gt;.  So &gt;
+    :help ft-c-syntax
+talks about the C syntax file and the option it provides.  Sometimes,
+additional sections for omni completion &gt;
+    :help ft-php-omni
+or filetype plugins &gt;
+    :help ft-tex-plugin
+are available.</p>
+</li>
+<li>
+<p>Error and Warning codes can be looked up directly in the help.  So &gt;</p>
+<div class="literalblock">
+<div class="content">
+<pre>:help E297</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>takes you exactly to the description of the swap error message and &gt;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help W10</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>talks about the warning "Changing a readonly file".</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Sometimes, however, those error codes are not described, but rather are
+listed at the Vim command that usually causes this.  So:</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>:help E128</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>takes you to the |:function| command</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Next chapter: |usr_03.txt|  Moving around</p>
+</div>
 </div>
 </div>
 </div>
@@ -24966,7 +25251,7 @@ files that you created.  You might want to keep that.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-10 02:53:02 +0430
+Last updated 2020-05-10 03:29:29 +0430
 </div>
 </div>
 </body>
