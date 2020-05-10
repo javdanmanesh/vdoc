@@ -1,0 +1,132 @@
+@font-face {
+  font-family: "ibm plex sans";
+  src: url("./fonts/IBMPlexSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm plex sans";
+  src: url("./fonts/IBMPlexSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm plex sans";
+  src: url("./fonts/IBMPlexSans-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ibm plex sans";
+  src: url("./fonts/IBMPlexSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ibm plex mono";
+  src: url("./fonts/IBMPlexMono-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm plex mono";
+  src: url("./fonts/IBMPlexMono-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ibm plex mono";
+  src: url("./fonts/IBMPlexMono-Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "ibm plex mono";
+  src: url("./fonts/IBMPlexMono-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: "ibm plex sans";
+  font-size: 1.5rem;
+}
+
+h1{
+  font-size: 200%;
+}
+
+h2{
+  font-size: 175%;
+}
+
+h3{
+  font-size: 150%;
+}
+
+h4{
+  font-size: 125%;
+}
+
+h5{
+  font-size: 100%;
+}
+
+.literalblock {
+  font-family: "ibm plex mono";
+  background-color: #DDD;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+.hdlist1 {
+  font-weight: bold;
+}
+
+td.content {
+  padding: 0.5rem;
+  margin: 0;
+}
+
+td.icon {
+  border-right: 1px solid gray;
+  padding: 0.5rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+div#content {
+  max-width: 64rem;
+  margin: auto;
+}
+
+a {
+  color: navy;
+  text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: maroon;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+h2 {
+  border: 3px solid maroon;
+}
+
+h3 {
+  border-bottom: 2px solid maroon;
+}
