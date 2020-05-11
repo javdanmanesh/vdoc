@@ -57,6 +57,7 @@
 body {
   font-family: "ibm plex sans";
   font-size: 1.5rem;
+  line-height: 150%;
 }
 
 h1{
@@ -81,9 +82,10 @@ h5{
 
 .literalblock {
   font-family: "ibm plex mono";
+  font-size: 1.2rem;
   background-color: #DDD;
-  padding: 0.5rem;
-  margin: 0;
+  padding: 1rem 0.5rem;
+  margin: 0.5rem 0;
 }
 
 pre {
