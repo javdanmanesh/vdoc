@@ -2,6 +2,7 @@
 :stylesdir: ./
 :stylesheet: asciidoctor.css
 :linkcss:
+:sectnums:
 :toc:
 
 == About the manuals
@@ -729,7 +730,7 @@ a specific flag, e.g.:
    And for the guioption flags:
 +
         :help go-<letter>
- 
+
 . Normal mode commands do not have a prefix. To go to the help page for the
    "gt" command:
 +

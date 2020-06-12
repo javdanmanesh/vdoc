@@ -133,3 +133,7 @@ h2 {
 h3 {
   border-bottom: 2px solid maroon;
 }
+
+.toc ul {
+  list-style-type: none;
+}
